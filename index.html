@@ -4,46 +4,129 @@
    <head>
         <title>My Portfolio</title>
 
-        <style>
+        <!-- An example of internal CSS -->
+        <!-- <style>
             body {background-color: rgb(225, 246, 246);}
             h1 {color:  #212529;}
             h2 {color:  #212529;}
             p {color:  #212529;}
-        </style>
+        </style> -->
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="refresh" content="120">
 
-   </head> 
+        <link rel="stylesheet" href="./css/index.css">
+
+   </head>
+
 
    <body>
+        <nav class="main-menu">
+            <ul class="main-menu_list">
+                <li class="main-menu_item">
+                    <a href="#about" class="main-menu_link">About</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#experience" class="main-menu_link">Experience</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#skills" class="main-menu_link">Skills</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#projects" class="main-menu_link">Projects</a>
+                </li>
+                <li class="main-menu_item">
+                    <a href="#connect" class="main-menu_link">Connect</a>
+                </li>
+            </ul>
+        </nav>
+
         <h1>Neghin</h1>
 
-        <section id="About">
+        <section id="about">
             <h2>About</h2>
             <p>My path here started with an electrical engineering background, I have always liked understanding how things work. But the real spark came from an unexpected place: while working as an after-school caregiver, I kept wishing I could build a simple app for the parents.  An app to log the day's activities and share the small, funny moments the kids had. That idea stuck with me, and it's a big part of why I'm now expanding into full-stack development (JavaScript, Node.js, React, and Python) to build software that makes people's lives a little easier.</p>
+            
         </section>
         
-        <section id="Experience">
+
+        <section id="experience">
             <h2>Experience</h2>
-            <ul>
+
+            
+            <div class="experience-item">
+
+                <div class="experience-header">
+                    <h3 class="job-title">Customer Service Representative</h3>
+                    <span class="job-date">Mar 2023 - Present</span>
+                </div>
+                
+                <ul class="job-description">
+                    <li>Provided both in-person and phone-based customer support, resolving order-status inquiries, complaints, and product issues with professionalism and care</li>
+                    <li>Served as the primary liaison between customers and production staff, ensuring accurate order handling and clear communication throughout the process</li>
+                    <li>Raised customer satisfaction ratings from 3.5 to 4.7 stars within 3 months through consistent service; customers specifically cited service quality as the highlight of their experience</li>
+                </ul>    
+            </div>
+
+            <!-- <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Family Healthcare Coordinator (Primary Caregiver)</h3>
+                    <span class="job-date">Feb 2024 - April 2026</span>
+                </div>
+                
+                <ul class="job-description">
+                    <li>Coordinated chemo sessions, medical appointments, and insurance claims for a family member going through cancer treatment</li>
+                    <li>Tracked vitals, symptoms, and pain levels daily, compiling clear, accurate reports for physicians to support informed care decisions</li>
+                </ul>
+            </div> -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="job-title">Teaching Assistant</h3>
+                    <span class="job-date">Sep 2021 - Aug 2022</span>
+                </div>
+                
+                <ul class="job-description">
+                    <li>Evaluated theory and programming assignments, provided detailed feedback on correctness, efficiency, and clarity to deepen students's understanding of course material</li>
+                    <li>Clarified complex topics and addressed student questions individually via email and discussion board in a timely manner</li>
+                </ul>
+            </div>
+            
+            <!-- <ul>
                 <li><strong>Programming Languages: </strong>Python, Java, JavaScript, R, MATLAB, LaTeX</li>
                 <li><strong>Software & Tools: </strong>Git, Microsoft Office Programs: Excel, Word, PowerPoint</li>
-            </ul>
+            </ul> -->
+            
         </section>
 
-        <section id="Connect">
-            <h2>Connect</h2>
-            <!-- link to github profile -->
-            <a href="https://github.com/neghinmadadi" target="_blank" rel="noreferrer">
-                <img src="./images/GitHub_Invertocat_Black_Clearspace.png" alt="Github Profile" width="40" height="40">
-            </a>
+        <section id="skills">
+            <h2>Skills</h2>
+            <!-- <ul>
+                <li><strong>Programming Languages: </strong>Python, Java, JavaScript, R, MATLAB, LaTeX</li>
+                <li><strong>Software & Tools: </strong>Git, Microsoft Office Programs: Excel, Word, PowerPoint</li>
+            </ul> -->
+        </section>
 
-            <!-- link to linkedin profile -->
-            <a href="https://www.linkedin.com/in/neghin-d-117493426" target="_blank" rel="noreferrer">
-                <img src="./images/InBug-Black.png" alt="Linkedin Profile" width="30" height="30">
-            </a>
+        <section id="projects">
+            <h2>Projects</h2>
+        </section>
+
+        <section id="connect">
+            <h2>Connect</h2>
+            
+            <!-- <ul> -->
+            <div class="connect-sec_container">
+                <!-- link to github profile -->
+                <a class="connect-sec_link" href="https://github.com/neghinmadadi" target="_blank" rel="noreferrer">
+                    <img class="connect-sec_img" id="github" src="./images/GitHub_Invertocat_Black_Clearspace.png" alt="Github Profile" width="40" height="auto">
+                </a>
+
+                <!-- link to linkedin profile -->
+                <a class="connect-sec_link" href="https://www.linkedin.com/in/neghin-d-117493426" target="_blank" rel="noreferrer">
+                    <img class="connect-sec_img" id="linkedin" src="./images/InBug-Black.png" alt="Linkedin Profile" width="40" height="auto">
+                </a>
+            <!-- </ul> -->
+            </div>
         </section>
 
    </body>
