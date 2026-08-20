@@ -49,7 +49,7 @@ section {
     position: sticky;
     top: 0;
     z-index: 100;
-    /*means 24px total padding vertically 12px top+12px bottom && keeps background padding cohesive*/
+    /*means 24px total padding vertically 12px top + 12px bottom && keeps background padding cohesive*/
     padding: 12px 20px; 
     background-color: #303846;
     /*separates nav from content*/
@@ -102,6 +102,21 @@ section {
     /* margin-bottom: 0; */
     padding-left: 20px;
 }
+
+/* Skills section styling*/
+#skills ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    /* align-items: center; */
+    /* font-weight: 800; */
+}
+
+
 /* connect section styling */
 .connect-sec_container { 
     display: flex;
@@ -109,12 +124,17 @@ section {
     /* flex-direction: row; */
     /* flex-wrap: wrap; */
     align-items: center;
-    column-gap: 1em;
+    column-gap: 0.8em;
     /* border: 5px solid black; */    
 }
-.connect-sec_img {
+.connect-sec_img#github {
     height: auto;
-    width: 40;
+    width: 40px;
+}
+/* height defaults to auto so no need to explicitly set it*/
+.connect-sec_img#linkedin {
+    height: auto;
+    width: 33px;
 }
 
 
