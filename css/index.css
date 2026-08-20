@@ -104,12 +104,13 @@ section {
 }
 
 /* Skills section styling*/
-.skills-list {
+#skills ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
-    /* list-style: none; */
-    /* margin: 0; */
+    list-style: none;
+    margin: 0;
     padding: 20px;
     /* align-items: center; */
     /* font-weight: 800; */
