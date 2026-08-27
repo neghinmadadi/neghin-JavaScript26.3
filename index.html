@@ -39,6 +39,9 @@
                 <li class="main-menu_item">
                     <a href="#connect" class="main-menu_link">Connect</a>
                 </li>
+                <li class="main-menu_item">
+                    <a href="#leave-a-message" class="main-menu_link">Leave Message</a>
+                </li>
             </ul>
         </nav>
 
@@ -124,6 +127,32 @@
                 </a>
             <!-- </ul> -->
             </div>
+        </section>
+
+        <!-- form section -->
+        <section id="leave-a-message">
+            <h2>Leave a Message</h2>
+            <form name="leave_message">
+                <label>Name:
+                <input type="text" name="usersName" required>
+                </label>
+                <label>Email:
+                <input type="email" name="usersEmail" required>
+                </label>
+                <label>Message:
+                <textarea name="usersMessage" required></textarea>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="messages" style="display: none;">
+            <h2>Messages</h2>
+
+            <ul>
+
+            </ul>
+
         </section>
         <script src="./js/index.js"></script>
    </body>
