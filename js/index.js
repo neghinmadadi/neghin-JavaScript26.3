@@ -64,61 +64,61 @@ messageForm.addEventListener("submit", function(event) {
         let entry = removeButton.parentNode;
         entry.remove();
 
-        // hide the messeges sec when message list is empty
-        if (messageList.children.length < 1) {
-            messageSection.style.display = "none";
-        } 
+        // // hide the messeges sec when message list is empty
+        // if (messageList.children.length < 1) {
+        //     messageSection.style.display = "none";
+        // } 
     });
 
-    // create an edit button
-    let editButton = document.createElement("button");
-    editButton.textContent = "edit";
-    editButton.type = "button";
-    editButton.className = "edit-button";
-    // add event listener to it
-    editButton.addEventListener("click", function() {
-        let entry = editButton.parentNode;
+    // // create an edit button
+    // let editButton = document.createElement("button");
+    // editButton.textContent = "edit";
+    // editButton.type = "button";
+    // editButton.className = "edit-button";
+    // // add event listener to it
+    // editButton.addEventListener("click", function() {
+    //     let entry = editButton.parentNode;
 
-        let messageSpan = newMessage.querySelector(".message-text");
+    //     let messageSpan = newMessage.querySelector(".message-text");
 
-        if (editButton.textContent === "edit") {
-            let currentMessage = messageSpan.textContent;
+    //     if (editButton.textContent === "edit") {
+    //         let currentMessage = messageSpan.textContent;
 
-            // create new input field for new message
-            let inputField = document.createElement("input");
-            inputField.type = "text";
-            inputField.value = currentMessage;
-            inputField.className = "edit-input";
+    //         // create new input field for new message
+    //         let inputField = document.createElement("input");
+    //         inputField.type = "text";
+    //         inputField.value = currentMessage;
+    //         inputField.className = "edit-input";
 
-            // make message field editable
-            entry.replaceChild(inputField, messageSpan);
-            // change edit button's text to save
-            editButton.textContent = "save";
-        } else { // when save is clicked
-            let inputField = entry.querySelector(".edit-input");
-            let newMessageValue = inputField.value;
+    //         // make message field editable
+    //         entry.replaceChild(inputField, messageSpan);
+    //         // change edit button's text to save
+    //         editButton.textContent = "save";
+    //     } else { // when save is clicked
+    //         let inputField = entry.querySelector(".edit-input");
+    //         let newMessageValue = inputField.value;
 
-            // create a new <span> to for the new message
-            let newSpan = document.createElement("span");
-            newSpan.className = "message-text";
-            newSpan.textContent = newMessageValue;
+    //         // create a new <span> to for the new message
+    //         let newSpan = document.createElement("span");
+    //         newSpan.className = "message-text";
+    //         newSpan.textContent = newMessageValue;
 
-            // replace the input field with the updated text span
-            entry.replaceChild(newSpan, inputField);
-            editButton.textContent = "edit";
-        };
-    })
+    //         // replace the input field with the updated text span
+    //         entry.replaceChild(newSpan, inputField);
+    //         editButton.textContent = "edit";
+    //     };
+    // })
 
     // append both buttons to the li
-    newMessage.appendChild(editButton);
+    // newMessage.appendChild(editButton);
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 
-    // hide the messeges sec when message list is empty
-    if (messageList.children.length > 0) {
-    //    messageSection.setAttribute("style", "display: block;");
-    messageSection.style.display = "block";
-    }
+    // // hide the messeges sec when message list is empty
+    // if (messageList.children.length > 0) {
+    // //    messageSection.setAttribute("style", "display: block;");
+    // messageSection.style.display = "block";
+    // }
 
 
     // reset the form
