@@ -4,14 +4,6 @@
    <head>
         <title>My Portfolio</title>
 
-        <!-- An example of internal CSS -->
-        <!-- <style>
-            body {background-color: rgb(225, 246, 246);}
-            h1 {color:  #212529;}
-            h2 {color:  #212529;}
-            p {color:  #212529;}
-        </style> -->
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="refresh" content="120">
@@ -40,7 +32,7 @@
                     <a href="#connect" class="main-menu_link">Connect</a>
                 </li>
                 <li class="main-menu_item">
-                    <a href="#Leave a Message" class="main-menu_link">Leave Message</a>
+                    <a href="#leave-a-message" class="main-menu_link">Leave a Message</a>
                 </li>
             </ul>
         </nav>
@@ -129,36 +121,31 @@
             </div>
         </section>
 
-        
 
-        <!-- <section id="messages" style="display: none;"> -->
-        <section id="messages"> 
-            <h2>Messages</h2>
-
-            <ul>
-
-            </ul>
-
-        </section>
-
-
-        <!-- PUTTing Leave a Message Section in the last part of the html -->
         <!-- form section -->
-        <section id="Leave a Message">
+        <section id="leave-a-message">
             <h2>Leave a Message</h2>
             <form name="leave_message">
-                <label>Name:
-                <input type="text" name="usersName" required>
-                </label>
-                <label>Email:
-                <input type="email" name="usersEmail" required>
-                </label>
-                <label>Message:
-                <textarea name="usersMessage" required></textarea>
-                </label>
+                <label for="usersName">Name:</label>
+                <input id="usersName" type="text" name="usersName" required>
+  
+                <label for="usersEmail">Email:</label>
+                <input id="usersEmail" type="email" name="usersEmail" required>
+
+                <label for="usersMessage">Message:</label>
+                <textarea id="usersMessage" name="usersMessage" required></textarea>
+
                 <button type="submit">Submit</button>
             </form>
         </section>
+
+        <section id="messages"> 
+            <h2>Messages</h2>
+
+            <ul></ul>
+        </section>
+
         <script src="./js/index.js"></script>
+
    </body>
 </html>

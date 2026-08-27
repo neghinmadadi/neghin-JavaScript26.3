@@ -49,11 +49,8 @@ section {
     position: sticky;
     top: 0;
     z-index: 100;
-    /*means 24px total padding vertically 12px top + 12px bottom && keeps background padding cohesive*/
     padding: 12px 20px; 
     background-color: #303846;
-    /*separates nav from content*/
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 90); */
 }
 .main-menu_list {
     display: flex;
@@ -189,6 +186,3 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
-
-
-
