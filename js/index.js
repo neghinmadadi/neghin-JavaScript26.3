@@ -1,74 +1,77 @@
 
+/****** insert copyright text in footer ********/
 // footer element
 const footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 
+// create date obj to add to footer
 const today = new Date();
 const thisYear = today.getFullYear();
 
 const footer = document.querySelector("footer");
 
 const copyright = document.createElement("p");
-copyright.textContent = `\u00A9 Neghin ${thisYear}`;
+copyright.textContent = `\u00A9 ${thisYear} Neghin`;
 footer.appendChild(copyright);
 
+/******* create a list of skills and append it to the skills sec ******/
 const skills = ["Python", "Java", "JavaScript", "HTML", "CSS", "R", "MATLAB", "LaTeX", "Git", "GitHub"];
 
 const skillSection = document.querySelector("#skills");
 const skillsList = skillSection.querySelector("ul");
 
-// loop through skills and add them to the skill section
+// loop through skills and add them to the skills section
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement("li");
     skill.textContent = skills[i];
     skillsList.appendChild(skill);
 };
 
+//****** lesson 8 updates */
+// query the message form
+let messageForm = document.querySelector('form[name="leave_message"]');
+// let messageForm = document.forms["leave_message"];
+// add eventListener to it
+messageForm.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-//************* add the following code later, AIRHub is getting picky*******/
-// const skills = ["Programming Languages: ", "Software & Tools: "];
+    let name = event.target.usersName.value;
+    let email = event.target.usersEmail.value;
+    let message = event.target.usersMessage.value;
 
-// const skillSelection = document.querySelector("#skills");
-// const skillsList = skillSelection.querySelector("ul");
+    console.log(name, email, message);
 
-// // loop through skills and add them to the skill section
-// for (let i = 0; i < skills.length; i++) {
-//     let skill = document.createElement("li");
-//     skill.textContent = skills[i];
-//     skillsList.appendChild(skill);
-// };
+    // get messages section
+    let messageSection = document.querySelector("#messages");
+    // query the list in the messages section
+    let messageList = messageSection.querySelector("ul");
 
-// // arrays to use for skillsList items
-// const progLangsList = ["Python", "Java", "JavaScript", "HTML", "CSS", "R", "MATLAB", "LaTeX"];
-// const softwareToolsList = ["Git", "GitHub", "Microsoft Office Programs"];
+    // create li element
+    let newMessage = document.createElement("li");
+    // add text content to it
+    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> <span class="message-text">${message}</span>`;
 
-// // add a class to skillsList to be used by css
-// skillsList.classList.add("skills-list");
-// // add class atribute to list items
-// skillsList.firstElementChild.classList.add("programming-langs");
-// skillsList.lastElementChild.classList.add("software-tools");
+    // console.log(newMessage.querySelector("span").textContent);
 
-// // add individual programming languages to their list item
-// // create a variable of first li
-// const progLangsItem = document.querySelector(".programming-langs");
-// progLangsItem.textContent = "";
-// // create bold element for title
-// const progLangsBold = document.createElement("strong");
-// progLangsBold.textContent = "Programming Languages: ";
-// // create textNode for list of prog langs
-// const progLangsText = document.createTextNode(progLangsList.join(", "));
-// // append title and text node to the programming languages li
-// progLangsItem.appendChild(progLangsBold);
-// progLangsItem.appendChild(progLangsText);
+    // create remove button
+    let removeButton = document.createElement("button");
+    removeButton.textContent = "remove";
+    removeButton.type = "button";
+    removeButton.className = "remove-button";
+    // add an eventListener to it
+    removeButton.addEventListener("click", function() {
+        let entry = removeButton.parentNode;
+        entry.remove();
+    });
 
-// // add individual software and tools to their list item
-// const softwareToolsItem = document.querySelector(".software-tools");
-// softwareToolsItem.textContent = "";
-// // create bold element for title
-// const softToolsBold = document.createElement("strong");
-// softToolsBold.textContent = "Software & Tools: ";
-// // create a text node for software lists
-// const softwareToolsText = document.createTextNode(softwareToolsList.join(", "));
-// // append title and text node to the software and tools li
-// softwareToolsItem.appendChild(softToolsBold);
-// softwareToolsItem.appendChild(softwareToolsText);
+
+    // append remove button to the li
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+
+
+    // reset the form
+    messageForm.reset();
+});
+
+
