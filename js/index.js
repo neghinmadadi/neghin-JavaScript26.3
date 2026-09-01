@@ -27,7 +27,7 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 };
 
-//****** lesson 8 updates */
+//************************ lesson 8 updates *************************/
 // query the message form
 let messageForm = document.querySelector('form[name="leave_message"]');
 // let messageForm = document.forms["leave_message"];
@@ -75,3 +75,44 @@ messageForm.addEventListener("submit", function(event) {
 });
 
 
+//************************ lesson 9 updates *************************/
+
+// create fetch request
+fetch('https://api.github.com/users/neghinmadadi/repos')
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Request failed!" + response.status);
+    }
+
+    // parse the response as json
+    return response.json();
+})
+.then(repositories => {
+    console.log(repositories);
+    // console.log(repositories.length)
+    // create a variable for projects section
+    const projectSection = document.querySelector("#projects");
+
+    // create a var to select the list in projects sec
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < repositories.length; i++) {
+        let project = document.createElement("li");
+        project.className = "project-li";
+        project.innerText = repositories[i].name;
+
+        // append to the list
+        projectList.appendChild(project);
+    }
+})
+.catch(error => {
+    console.error("An error occured: ", error)
+})
+
+// console.log(repositories);
+
+// // create a variable for projects section
+// let projectSection = document.querySelector("#projects");
+
+// // create a var to select the list in projects sec
+// let projecList = projectSection.querySelector("ul");
