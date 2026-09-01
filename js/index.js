@@ -76,6 +76,11 @@ messageForm.addEventListener("submit", function(event) {
 
 
 //************************ lesson 9 updates *************************/
+// create a variable for projects section
+const projectSection = document.querySelector("#projects");
+
+// create a var to select the list in projects sec
+const projectList = projectSection.querySelector("ul");
 
 // create fetch request
 fetch('https://api.github.com/users/neghinmadadi/repos')
@@ -90,11 +95,11 @@ fetch('https://api.github.com/users/neghinmadadi/repos')
 .then(repositories => {
     console.log(repositories);
     // console.log(repositories.length)
-    // create a variable for projects section
-    const projectSection = document.querySelector("#projects");
+    // // create a variable for projects section
+    // const projectSection = document.querySelector("#projects");
 
-    // create a var to select the list in projects sec
-    const projectList = projectSection.querySelector("ul");
+    // // create a var to select the list in projects sec
+    // const projectList = projectSection.querySelector("ul");
 
     for (let i = 0; i < repositories.length; i++) {
         let project = document.createElement("li");
@@ -106,8 +111,14 @@ fetch('https://api.github.com/users/neghinmadadi/repos')
     }
 })
 .catch(error => {
-    console.error("An error occured: ", error)
-})
+    console.error("An error occurred: ", error);
+    const project_error = document.createElement("li");
+    project_error.className = "project-li-error";
+    project_error.textContent = "Projects could not be loaded";
+
+    // append to the list
+    projectList.appendChild(project_error);
+});
 
 // console.log(repositories);
 

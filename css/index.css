@@ -119,7 +119,7 @@ section {
 /************************ projects section ************************/
 #projects ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     list-style: none;
     margin: 0;
     padding: 20px;
@@ -130,6 +130,22 @@ section {
     font-weight: 600;
     color: #38404e;
 }
+
+/*
+ideas by AirHUB:
+.projects-list {
+  display: flex;
+  gap: some spacing;
+  flex-wrap: wrap;
+}
+/***** media query
+@media (max-width: some breakpoint) {
+  .projects-list {
+    change layout for smaller screens;
+    adjust spacing;
+  }
+}
+*/
 
 /************************ connect section styling */
 .connect-sec_container { 
