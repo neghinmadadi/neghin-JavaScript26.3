@@ -78,52 +78,77 @@ messageForm.addEventListener("submit", function(event) {
 //************************ lesson 9 updates *************************/
 // create a variable for projects section
 const projectSection = document.querySelector("#projects");
-
-// create a var to select the list in projects sec
+// create a variable to select the list in projects sec
 const projectList = projectSection.querySelector("ul");
 
-// create fetch request
-fetch('https://api.github.com/users/neghinmadadi/repos')
-.then(response => {
-    if (!response.ok) {
-        throw new Error("Request failed!" + response.status);
-    }
+// // create fetch request
+// fetch('https://api.github.com/users/neghinmadadi/repos')
+// .then(response => {
+//     if (!response.ok) {
+//         throw new Error("Request failed!" + response.status); // any error in 4xx (four hundred range) means a problem with how the request was made, which might be our fault. The 5xx (five hundred range) means the resver had a problem, which means this isn't our fault
+//     }
 
-    // parse the response as json
-    return response.json();
-})
-.then(repositories => {
-    console.log(repositories);
-    // console.log(repositories.length)
-    // // create a variable for projects section
-    // const projectSection = document.querySelector("#projects");
+//     // parse the response as json
+//     return response.json();
+// })
+// .then(repositories => {
+//     console.log(repositories);
+//     // console.log(repositories.length)
+//     // // create a variable for projects section
+//     // const projectSection = document.querySelector("#projects");
 
-    // // create a var to select the list in projects sec
-    // const projectList = projectSection.querySelector("ul");
+//     // // create a var to select the list in projects sec
+//     // const projectList = projectSection.querySelector("ul");
 
-    for (let i = 0; i < repositories.length; i++) {
+//     for (let i = 0; i < repositories.length; i++) {
+//         let project = document.createElement("li");
+//         project.className = "project-li";
+//         project.innerText = repositories[i].name;
+
+//         // append to the list
+//         projectList.appendChild(project);
+//     }
+// })
+// .catch(error => {
+//     console.error("An error occurred: ", error);
+//     const project_error = document.createElement("li");
+//     project_error.className = "project-li-error";
+//     project_error.textContent = "Projects could not be loaded";
+
+//     // append to the list
+//     projectList.appendChild(project_error);
+// });
+
+/***** try the above fetch request with async await *******/
+async function getGithubRepos() {
+    try {
+        const apiResponse = await fetch('https://api.github.com/users/neghinmadadi/repos');
+        if (!apiResponse.ok) {
+            throw new Error("Request failed!" + response.status);
+        }
+        // console.log("api response: ", apiResponse);
+        // convert api response to json (array of repos)
+        const repos = await apiResponse.json();
+        console.log(repos)
+
+        // loop through repos
+        for (let i = 0; i < repos.length; i++) {
         let project = document.createElement("li");
         project.className = "project-li";
-        project.innerText = repositories[i].name;
+        project.innerText = repos[i].name;
 
         // append to the list
         projectList.appendChild(project);
     }
-})
-.catch(error => {
-    console.error("An error occurred: ", error);
-    const project_error = document.createElement("li");
-    project_error.className = "project-li-error";
-    project_error.textContent = "Projects could not be loaded";
+    } catch (error) {
+        console.error("An error occurred: ", error);
+        const project_error = document.createElement("li");
+        project_error.className = "project-li-error";
+        project_error.textContent = "Projects could not be loaded";
 
-    // append to the list
-    projectList.appendChild(project_error);
-});
+        // append to the list
+        projectList.appendChild(project_error);
+    } 
+}
 
-// console.log(repositories);
-
-// // create a variable for projects section
-// let projectSection = document.querySelector("#projects");
-
-// // create a var to select the list in projects sec
-// let projecList = projectSection.querySelector("ul");
+getGithubRepos();
