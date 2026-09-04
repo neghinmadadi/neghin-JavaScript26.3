@@ -38,7 +38,7 @@ h3 {
 
 section {
     padding: 20px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     /* border: 2px solid red; */
     text-align: justify;
 }
@@ -70,7 +70,7 @@ section {
     opacity: 0.8;
 }
 
-/* Experience Section Style*/
+/************************ Experience Section Styling ************************/
 #experience {
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ section {
 .experience-item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
 }
 .experience-header {
     display: flex;
@@ -89,18 +89,20 @@ section {
     justify-content: space-between;
     /* align title and date in the center*/
     align-items: center;
+    margin-top: -15px;
 }
 .job-date {
     font-style: italic;
     color: rgba(51, 51, 51, 0.65);
 }
 .job-description {
-    margin-top: 0.01px;
+    margin-top: -5px;
+    /* margin-top: 0.01px; */
     /* margin-bottom: 0; */
     padding-left: 20px;
 }
 
-/* Skills section styling*/
+/************************ Skills section styling*/
 #skills ul {
     display: flex;
     flex-direction: row;
@@ -109,12 +111,43 @@ section {
     list-style: none;
     margin: 0;
     padding: 20px;
+    margin-top: -15px;
     /* align-items: center; */
     /* font-weight: 800; */
 }
 
+/************************ projects section ************************/
+#projects ul{
+    display: flex;
+    flex-direction: column; 
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    margin-top: -15px;
+}
 
-/* connect section styling */
+.project-li {
+    font-weight: 600;
+    color: #38404e;
+}
+
+/*
+ideas by AirHUB:
+.projects-list {
+  display: flex;
+  gap: some spacing;
+  flex-wrap: wrap;
+}
+/***** media query
+@media (max-width: some breakpoint) {
+  .projects-list {
+    change layout for smaller screens;
+    adjust spacing;
+  }
+}
+*/
+
+/************************ connect section styling */
 .connect-sec_container { 
     display: flex;
     height: 50px;
@@ -129,7 +162,7 @@ section {
     height: auto;
     width: 40px;
 }
-/* height defaults to auto so no need to explicitly set it*/
+
 .connect-sec_img#linkedin {
     height: auto;
     width: 33px;
@@ -153,7 +186,7 @@ form[name="leave_message"] textarea,
 .edit-input {
   width: 100%;
   padding: 14px;
-  font-size: 16px; /* Crucial: Prevents iOS from auto-zooming on focus */
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
